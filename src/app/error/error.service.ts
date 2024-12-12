@@ -5,12 +5,12 @@ import { Observable, tap } from 'rxjs';
 @Injectable({
   providedIn:"root",
 })
-export class TestService {
+export class ErrorService {
   public httpClient = inject(HttpClient)
   public response = signal({})
 
   public getSomeData():Observable<any> {
-    return this.httpClient.get('https://blablablalbatest.test/api/testdata').pipe(tap((object) => this.response.set(object)))
+    return this.httpClient.get('https://blablablalbatest.test/api/error-data').pipe(tap((object) => this.response.set(object)))
   }
 
 }
